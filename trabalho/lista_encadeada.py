@@ -32,7 +32,7 @@ class FilaTriagem:
             atual.proximo = nodo
 
     def inserir(self):
-        cor = input("Digite a cor do cartão (A para amarelo, V para verde): ").strip().upper()
+        cor = input('Digite a cor do cartão (A para amarelo, V para verde): ').strip().upper()
         if cor == 'A':
             nodo = Nodo(self.numero_amarelo, cor)
             self.numero_amarelo += 1
@@ -42,33 +42,33 @@ class FilaTriagem:
             self.numero_verde += 1
             self.inserirSemPrioridade(nodo)
         else:
-            print("Cor inválida!")
+            print('Cor inválida!')
 
     def imprimirListaEspera(self):
         atual = self.head
         if not atual:
-            print("Nenhum paciente na fila.")
+            print('Nenhum paciente na fila.')
         else:
             while atual:
-                print(f"Cartão {atual.cor} número {atual.numero}")
+                print(f'Cartão {atual.cor} número {atual.numero}')
                 atual = atual.proximo
 
     def atenderPaciente(self):
         if not self.head:
-            print("Nenhum paciente na fila.")
+            print('Nenhum paciente na fila.')
         else:
-            print(f"Chamando paciente com cartão {self.head.cor} número {self.head.numero}")
+            print(f'Chamando paciente com cartão {self.head.cor} número {self.head.numero}')
             self.head = self.head.proximo
 
 
 def menu():
     fila = FilaTriagem()
     while True:
-        print("\n1 – Adicionar paciente a fila")
-        print("2 – Mostrar pacientes na fila")
-        print("3 – Chamar paciente")
-        print("4 – Sair")
-        opcao = input("Escolha uma opção: ").strip()
+        print('\n1 – Adicionar paciente a fila')
+        print('2 – Mostrar pacientes na fila')
+        print('3 – Chamar paciente')
+        print('4 – Sair')
+        opcao = input('Escolha uma opção: ').strip()
 
         if opcao == '1':
             fila.inserir()
@@ -79,7 +79,7 @@ def menu():
         elif opcao == '4':
             break
         else:
-            print("Opção inválida!")
+            print('Opção inválida!')
 
 
 menu()
